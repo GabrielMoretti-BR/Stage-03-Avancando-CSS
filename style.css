@@ -1,0 +1,233 @@
+:root{
+    font-size: 62.5%;
+    --color-dark:#5C6981;
+    --color-blue: #8E9AAF;
+    --color-purple: #CBC0D3;
+    --color-pink: #FEEAFA;
+    --color-ligth: #EFF1FF;
+    --font-heading1: clamp(4rem, 4rem + 5vh,5.6rem);
+    --font-content: clamp(2rem, 2 + 5vh, 2.4rem)
+    --content-baseWidth: 320px
+
+}
+*{
+    margin: 0;
+    padding: 0;  
+}
+body{
+    font-family: 'Palanquin', sans-serif;
+    background-color: var(--color-ligth);
+}
+header{
+    text-align: center;
+    background-color: var(--color-blue);
+
+    padding-top: 3.2rem;
+}
+header p{
+    background-color: var(--color-ligth);
+    display: inline-block;
+    width:30.5rem;
+}
+header p:nth-child(2){
+    display: none;
+    width:30.5rem;
+}
+h1{
+    background-color: #CBC0D3;
+
+    font-family: 'Staatliches', cursive;
+    color:white;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    font-size: var(--font-heading1);
+    letter-spacing: 0.05em;
+
+    margin-bottom: 30px;
+}
+
+header > img{
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+
+}
+section{
+
+    padding: 1.5rem 0;
+    background-color: var(--color-ligth);
+
+    margin-bottom: 6rem ;
+
+    color: var(--color-dark);
+    font-size: 2rem;
+    line-height: 1.5rem;
+}
+main{
+    display: grid;
+    gap: 3.2rem;
+}
+
+.page{
+    width: 32rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sorveteCard{
+    position: relative;
+}
+.sorveteCard>h3{
+    /*Acertar para o responsivel*/
+    opacity: 0;
+    
+    display: inline-block;
+    position: absolute;
+
+    color: var(--color-dark);
+    font-size: 2rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+
+    background-color: var(--color-pink);
+    border-radius: 20px;
+    padding: 0 24px;
+    right: 16px;
+    top: 16px;
+    animation: labelDown 800ms ease 100ms  forwards;
+
+}
+.sorveteCard>img{
+    opacity: 0;
+    animation: imageUp 800ms ease-in-out 200ms forwards;
+
+}
+#Sorvete5{
+    /* a */
+    display: none;
+}
+#Sorvete6{
+    /* c */
+    display: none;
+
+}
+
+footer{ 
+    display: none;
+}
+
+@keyframes imageUp {
+    0%{
+        opacity: 0;
+        transform: translateY(+10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+@keyframes labelDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+
+@media (min-width: 1450px) {
+	/* Css especifico para telas maiores que 700px */
+
+	body{
+		display: flex;
+	}
+    header{
+        height: auto;
+    }
+    header p{
+        display: none;
+        width: 37.7rem;
+    }
+    header p:nth-child(2){
+        background-color: var(--color-blue);
+        color: var(--color-ligth);
+        display: inline-block;
+        width:30.5rem;
+        padding: 5.5rem;
+    }
+    section{
+
+        background-color: var(--color-blue);
+    }
+    main{
+        grid-template-areas:  	"A B E"
+                                "C B F"
+                                "C D F";
+        align-items: center;
+        justify-content: center;
+        margin-top: 65px
+    }
+
+    #Sorvete1{
+        grid-area: A;
+    }
+    #Sorvete2{
+        grid-area: B;
+    }
+    #Sorvete3{
+        grid-area: D;
+    }
+    #Sorvete4{
+        grid-area: C;
+    }
+    #Sorvete5{
+        /* a */
+        display: inline-block;
+        grid-area: E;
+    }
+    #Sorvete6{
+        /* c */
+        display: inline-block;
+        grid-area: F;
+    }
+    footer{
+        margin-top: 50px;
+        margin-bottom: 30%;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 750px ) and  (max-width: 1450px){
+	/* Css especifico para telas maiores que 700px */
+    header{
+        height: auto;
+    }
+    header p{
+        display: inline-block;
+        width: 37.7rem;
+    }
+
+
+    main{
+        grid-template-areas:  	"A B"
+                                "C B"
+                                "C D";
+        align-items: center;
+        justify-content: center;
+    }
+
+    #Sorvete1{
+        grid-area: A;
+    }
+    #Sorvete2{
+        grid-area: B;
+    }
+    #Sorvete3{
+        grid-area: D;
+    }
+    #Sorvete4{
+        grid-area: C;
+    }
+
+}
